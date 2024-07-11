@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"]
+    },
     "outDir": "./lib/cjs",
     "useDefineForClassFields": true,
     "lib" :["DOM", "DOM.Iterable","ESNext"],
@@ -20,7 +23,7 @@
     "typeRoots": ["index.d.ts","node_modules/@types"]
   },
   "files": ["index.ts"],
-  "include": ["src/components"],
+  "include": ["src/components","./global.d.ts" ],
   "exclude": ["node_modules"],
   "references": [{"path": "./tsconfig.node.json"}]
 }

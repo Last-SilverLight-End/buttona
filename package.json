@@ -8,20 +8,21 @@
   "main": "./lib/cjs/index.js",
   "license": "MIT",
   "files": [
-    "lib/"
+    "lib/",
+    "dist/"
+
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "clean": "rimraf lib",
-    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css lib/",
     "tsc-build": "npm run clean && tsc -p tsconfig-esm.json && tsc -p tsconfig-cjs.json && yarn copy-files",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "publish:npm": "npm run tsc-build && npm publish"
   },
   "dependencies": {
-    "@hunterkiller404/buttona": "^0.0.6",
     "copyfiles": "^2.4.1",
     "path": "^0.12.7",
     "react": "^18.3.1",

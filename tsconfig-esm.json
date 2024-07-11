@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"]
+    },
     "target": "ES5",
     "outDir": "./lib/esm",
     "useDefineForClassFields": true,
@@ -20,7 +24,7 @@
     "typeRoots": ["index.d.ts","node_modules/@types"]
   },
   "files": ["index.ts"],
-  "include": ["src/components"],
+  "include": ["src/components","./global.d.ts" ],
   "exclude": ["node_modules"],
   "references": [{"path": "./tsconfig.node.json"}]
 }

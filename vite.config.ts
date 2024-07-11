@@ -1,42 +1,32 @@
-import { defineConfig } from "vite";
-import * as path from "path";
-import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
+import * as path from 'path';
 
-// https://vitejs.dev/config/
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import dts from 'vite-plugin-dts';
+
 export default defineConfig({
-  plugins: [dts(), tsconfigPaths()],
-
-  server: {
-    port: 3000,
-  },
-
+  assetsInclude: ['/sb-preview/runtime.js'],
   build: {
-   // 빌드할 라이브러리에 대한 설정
     lib: {
-	// 라이브러리의 진입점
-      entry: path.resolve(__dirname, "src/index.tsx"),
-      name: "index",
-      fileName: "index",
+      entry: path.resolve(__dirname, 'src/components/index.ts'),
+      name: 'react-carousel-image-optimized',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react"],
+      external: ['react', 'react-dom', '**/*.stories.tsx'],
       output: {
         globals: {
-          react: "React",
+          react: 'React',
+          'react-dom': 'ReactDOM',
         },
+        banner: '"use client";',
+        interop: 'auto',
       },
     },
-   // CommonJS 번들러에 대한 옵션을 정의한다.
     commonjsOptions: {
-      esmExternals: ["react"],
+      esmExternals: ['react'],
     },
   },
-
-// 절대경로
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
+  
 });
