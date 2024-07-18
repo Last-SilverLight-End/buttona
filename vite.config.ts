@@ -24,15 +24,10 @@ export default defineConfig({
     },
   },
   plugins: [
-    dts(),
+    dts({
+      tsconfigPath:"tsconfig.node.json",
+    }),
     react(),
-    tsconfigPaths({ // tsconfig-paths 플러그인을 설정에 추가합니다.
-      root: __dirname,
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-      alias: {
-        '@components': path.resolve(__dirname, 'src/components'), // '@components' 경로 별칭을 설정합니다.
-        '@styles': path.resolve(__dirname, 'src/components/styles') // '@styles' 경로 별칭을 설정합니다.
-      }
-    })
+    tsconfigPaths(),
   ],
 });

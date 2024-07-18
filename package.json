@@ -1,18 +1,28 @@
 {
-  "name": "buttona",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@hunterkiller404/buttona",
+  "private": false,
+  "version": "0.0.13",
   "type": "module",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/src/components/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node ./postprocess.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "files": [
-    "./src/components/"
+    "dist/"
   ],
   "dependencies": {
+    "@hunterkiller404/buttona": "^0.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vite-plugin-dts": "^3.9.1",

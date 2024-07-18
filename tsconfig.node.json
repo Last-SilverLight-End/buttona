@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@styles/*": ["src/components/styles/*"],
@@ -9,8 +9,9 @@
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": false,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "noEmit": true

@@ -5,7 +5,9 @@
       "@styles/*": ["src/components/styles/*"],
       "@components/*": ["src/components/*"]
     },
+    "allowImportingTsExtensions": false,
     "composite": true,
+    "jsx": "react-jsx",
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "skipLibCheck": true,
     "module": "ESNext",
