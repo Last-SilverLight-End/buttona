@@ -14,7 +14,8 @@
     "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noEmit": true
+    "noEmit": true,
+    "esModuleInterop": true
   },
-  "include": ["src/components","vite.config.ts", "src/types"]
+  "include": ["src/components", "vite.config.ts", "src/types"]
 }

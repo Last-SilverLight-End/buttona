@@ -13,26 +13,18 @@
 }
 
 .size-middle {
-  width: 180px;
-  height: 132px;
+  width: 100px;
+  height: 40px;
   font-size: 29px;
 }
 
 .size-large {
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
+  width: 180px;
+  height: 132px;
+  font-size: 40px;
 }
 
-.color-blue{
-  color:blue;
-}
-.color-green{
-  color:rgb(0, 128, 0);
-}
-.color-red{
-  color:rgb(255, 0, 0);
-}
+
 .color-white{
   color:rgb(255,255,255);
 }
@@ -45,4 +37,16 @@
 }
 .backgroundColor-black{
   background-color:rgb(0,0,0);
+}
+.backgroundColor-blue{
+  color:rgb(0, 0, 255);
+}
+.backgroundColor-green{
+  color:rgb(0, 128, 0);
+}
+.backgroundColor-red{
+  color:rgb(255, 0, 0);
+}
+.backgroundColor-purple{
+  color:rgb(132, 0, 255);
 }
